@@ -3,7 +3,8 @@
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.4",
-        "php-di/php-di": "^6.3"
+        "php-di/php-di": "^6.3",
+        "jenssegers/blade": "^1.4"
     },
     "require-dev": {
         "slim/slim-skeleton": "^4.3"
