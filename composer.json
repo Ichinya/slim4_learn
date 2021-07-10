@@ -1,18 +1,26 @@
 {
-    "name": "user/slim.local",
-    "require": {
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.4",
-        "php-di/php-di": "^6.3",
-        "jenssegers/blade": "^1.4"
-    },
-    "require-dev": {
-        "slim/slim-skeleton": "^4.3"
-    },
-    "authors": [
-        {
-            "name": "Ichi",
-            "email": "info@ichiblog.ru"
-        }
-    ]
+  "name": "user/slim.local",
+  "require": {
+    "slim/slim": "4.*",
+    "slim/psr7": "^1.4",
+    "php-di/php-di": "^6.3",
+    "jenssegers/blade": "^1.4"
+  },
+  "require-dev": {
+    "slim/slim-skeleton": "^4.3"
+  },
+  "autoload": {
+    "files": [
+      "./app/helpers.php"
+    ],
+    "psr-4": {
+      "App\\": "app"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ichi",
+      "email": "info@ichiblog.ru"
+    }
+  ]
 }

@@ -3,3 +3,7 @@
 
 # Настройки
 Все настройки хранятся в файле \app\settings.php
+
+# commands
+
+* `composer dumpautoload -o` для создания оптимизированного файла autoload
