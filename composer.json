@@ -8,10 +8,9 @@
     "slim/psr7": "^1.4",
     "php-di/php-di": "^6.3",
     "php-di/slim-bridge": "^3.1",
-    "jenssegers/blade": "^1.4"
-  },
-  "require-dev": {
-    "slim/slim-skeleton": "^4.3"
+    "jenssegers/blade": "^1.4",
+    "illuminate/support": "^8.49",
+    "illuminate/database": "^8.49"
   },
   "autoload": {
     "files": [

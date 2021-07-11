@@ -3,20 +3,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Support\View;
 use Psr\Http\Message\ResponseInterface as Response;
 
 
 class WelcomeController
 {
-    public function index(Response $response): Response
+    public function index(View $view, Response $response): Response
     {
-        $response->getBody()->write("Hello world!");
-        return $response;
+        return $view('auth.home', [
+            'name' => 'Slim View'
+        ]);
     }
 
-    public function show(Response $response, $name): Response
+    public function show(View $view, $name): Response
     {
-        $response->getBody()->write("Welcome on $name");
-        return $response;
+        return $view('user.show', compact('name'));
     }
 }
