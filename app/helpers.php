@@ -5,11 +5,18 @@
  */
 
 use Illuminate\Support\Collection;
-use Psr\Http\Message\ResponseInterface as Response;
-use Jenssegers\Blade\Blade;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
+
+if (!function_exists('env')) {
+    function env($key, $default = false)
+    {
+        $value = getenv($key);
+        throw_when(!$value && !$default, "$key is not defined .env variable and has not default value");
+        return $value || $default;
+    }
+}
 
 if (!function_exists('base_path')) {
     function base_path($path = ''): string
