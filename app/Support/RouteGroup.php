@@ -43,7 +43,7 @@ class RouteGroup
         $group = $this->app->group($this->prefix, function (RouteCollectorProxy $group) {
             Route::setup($group);
 
-            require $this->routes;
+            require_once $this->routes;
         });
 
         array_walk($this->middleware, fn($middleware) => $group->add(new $middleware));

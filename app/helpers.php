@@ -7,6 +7,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 
 /*
+ * collect
+ * factory
  * env
  * base_path
  * config_path
@@ -23,6 +25,22 @@ use Illuminate\Support\Str;
  * data_set
  */
 
+if (!function_exists('collect')) {
+    function collect($items): Collection
+    {
+        return new Collection($items);
+    }
+}
+
+if (!function_exists('factory')) {
+    function factory(string $model, int $count = 1): FactoryMakeOrCreate
+    {
+        $factory = new Factory;
+
+        return $factory($model, $count);
+    }
+}
+
 if (!function_exists('env')) {
     function env($key, $default = false)
     {
@@ -30,7 +48,7 @@ if (!function_exists('env')) {
 
         throw_when(!$value && !$default, "{$key} is not a defined .env variable and has not default value");
 
-        return $value || $default;
+        return $value ?? $default;
     }
 }
 

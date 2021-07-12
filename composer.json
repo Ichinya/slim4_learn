@@ -12,11 +12,16 @@
     "illuminate/support": "^8.49",
     "illuminate/database": "^8.49",
     "zeuxisoo/slim-whoops": "^0.7.3",
-    "vlucas/phpdotenv": "*"
+    "vlucas/phpdotenv": "*",
+    "robmorgan/phinx": "^0.12",
+    "fzaninotto/faker": "*"
   },
   "autoload": {
     "files": [
       "./app/helpers.php"
+    ],
+    "classmap": [
+      "./database/factories/support"
     ],
     "psr-4": {
       "App\\": "app",
