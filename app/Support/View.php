@@ -3,19 +3,19 @@
 namespace App\Support;
 
 use Jenssegers\Blade\Blade;
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
-use Psr\Http\Message\ResponseInterface as Response;
 
 class View
 {
-    public Response $response;
+    public $response;
 
     public function __construct(ResponseFactoryInterface $factory)
     {
-        $this->response = $factory->createResponse(200, 'Success!');
+        $this->response = $factory->createResponse(200, 'Success');
     }
 
-    public function __invoke(string $template = '', array $with = []): Response
+    public function __invoke(string $template = '', array $with = []) : ResponseInterface
     {
         $cache = config('blade.cache');
         $views = config('blade.views');

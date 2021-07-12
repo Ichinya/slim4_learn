@@ -1,16 +1,13 @@
 <?php
 
-
-namespace App\Providers;
-
+namespace Boot\Foundation\Bootstrappers;
 
 use Dotenv\Dotenv;
 use Dotenv\Exception\InvalidPathException;
 
-class EnvironmentVariablesServiceProvider extends ServiceProvider
+class LoadEnvironmentVariables extends Bootstrapper
 {
-
-    public function register()
+    public function boot()
     {
         try {
             $env = Dotenv::createImmutable(base_path());
@@ -18,10 +15,5 @@ class EnvironmentVariablesServiceProvider extends ServiceProvider
         } catch (InvalidPathException $e) {
 
         }
-    }
-
-    public function boot()
-    {
-
     }
 }

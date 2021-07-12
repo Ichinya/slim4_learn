@@ -1,21 +1,15 @@
 <?php
 
-namespace App\Providers;
+namespace Boot\Foundation\Bootstrappers;
 
 use Zeuxisoo\Whoops\Slim\WhoopsMiddleware;
 
-class ErrorMiddlewareServiceProvider extends ServiceProvider
+class LoadDebuggingPage extends Bootstrapper
 {
-
-    public function register()
+    public function boot()
     {
         if (env('APP_DEBUG', false)) {
             $this->app->add(new WhoopsMiddleware());
         }
-    }
-
-    public function boot()
-    {
-        //
     }
 }
