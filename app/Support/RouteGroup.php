@@ -2,13 +2,14 @@
 
 namespace App\Support;
 
+use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
 
 class RouteGroup
 {
-    public $app;
-    public $prefix;
-    public $routes;
+    public App $app;
+    public string $prefix;
+    public string $routes;
     public array $middleware = [];
 
     public function __construct(&$app)
@@ -16,21 +17,21 @@ class RouteGroup
         $this->app = $app;
     }
 
-    public function prefix(string $prefix)
+    public function prefix(string $prefix): RouteGroup
     {
         $this->prefix = $prefix;
 
         return $this;
     }
 
-    public function routes($path = '')
+    public function routes($path = ''): RouteGroup
     {
         $this->routes = $path;
 
         return $this;
     }
 
-    public function middleware(array $middleware)
+    public function middleware(array $middleware): RouteGroup
     {
         $this->middleware = $middleware;
 
@@ -40,7 +41,7 @@ class RouteGroup
     public function register()
     {
         $group = $this->app->group($this->prefix, function (RouteCollectorProxy $group) {
-            $app = Route::setup($group);
+            Route::setup($group);
 
             require $this->routes;
         });

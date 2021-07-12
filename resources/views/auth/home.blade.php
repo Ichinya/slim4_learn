@@ -2,6 +2,6 @@
 
 @section('content')
     <div>
-        <p>{{ env("APP_NAME") }} Home Page</p>
+        <p>Home Page {{ $user->first_name }}</p>
     </div>
 @endsection

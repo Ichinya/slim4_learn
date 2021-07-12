@@ -3,9 +3,12 @@
 namespace App\Support;
 
 use Illuminate\Support\Str;
+use Slim\App;
+use Slim\Routing\RouteCollectorProxy;
 
 class Route
 {
+    /** @var App|RouteCollectorProxy $app */
     public static $app;
 
     public static function setup(&$app)
