@@ -16,3 +16,4 @@ yarn-error.log
 /cache
 /storage/cache
 /public/js
+/public/css
