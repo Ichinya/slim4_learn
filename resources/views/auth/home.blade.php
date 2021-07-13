@@ -4,7 +4,6 @@
     <div>
         Home Page
 
-        {{ $team->name }}
         @foreach ($users as $user)
             <pre>
                 {{ $user->name }} {{ $user->email }} {{ $user->password }}

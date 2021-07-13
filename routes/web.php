@@ -1,10 +1,9 @@
 <?php
 
+use App\Support\View;
 use App\Support\Route;
 
-Route::get('/', 'WelcomeController@index');
-Route::get('/{name}', 'WelcomeController@show');
+Route::get('/register', fn (View $view) => $view('auth.register'));
 
-//Route::get('/{name}', 'WelcomeController@show')->add(
-//    new \App\Http\Middleware\ExampleAfterMiddleware,
-//);
+Route::get('/welcome/{name}', 'WelcomeController@index');
+Route::get('/welcome/{name}/{id}', 'WelcomeController@show');

@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SlimPHP</title>
-</head>
-<body>
-<div>
-    <h1>Blade Templates</h1>
-    @yield('content')
-</div>
-</body>
+<html>
+    <head>
+        <title>
+            Slim 4 Authentication
+        </title>
+    </head>
+    <body>
+        <div id="app">
+            <h1>Hello World Of Blade Templates!</h1>
+            @yield('content')
+        </div>
+
+        <script src="/public/js/main.js"></script>
+    </body>
 </html>

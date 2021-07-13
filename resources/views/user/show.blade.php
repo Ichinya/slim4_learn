@@ -2,6 +2,7 @@
 
 @section('content')
     <div>
-        <p>{{ $name }} Home Page</p>
+        <h1>Welcome {{ $name }}</h1>
+        <small>(Your id is {{ $id }})</small>
     </div>
 @endsection

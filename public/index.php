@@ -11,12 +11,12 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
 /**
- * Make Console Kernel
+ * Resolve Http Kernel
  */
-$kernel = $app->resolve(\App\Http\HttpKernel::class);
+$kernel = $app->resolve(App\Http\HttpKernel::class);
 
 /**
- * Bootstrap Console Application
+ * Bootstrap Our Http Application
  */
 $kernel->bootstrapApplication();
 
