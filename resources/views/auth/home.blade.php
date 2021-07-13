@@ -1,7 +1,14 @@
-@extends('layouts/app')
+@extends('layouts.app')
 
 @section('content')
     <div>
-        <p>Home Page {{ $user->first_name }}</p>
+        Home Page
+
+        {{ $team->name }}
+        @foreach ($users as $user)
+            <pre>
+                {{ $user->name }} {{ $user->email }} {{ $user->password }}
+            </pre>
+        @endforeach
     </div>
 @endsection

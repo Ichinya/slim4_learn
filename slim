@@ -1,0 +1,21 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Bootstrap Console Application
+ **/
+$app = require __DIR__ . '/bootstrap/console.php';
+
+/**
+ * Resolve Symfony Console From Container
+ **/
+$console = $app->resolve(\Symfony\Component\Console\Application::class);
+
+/**
+ * Run Symfony Console Application Commands
+ **/
+$console->run();
+
+/**
+ * Exit Out Of Console Application
+ **/
+exit();

@@ -11,9 +11,9 @@ class LoadEnvironmentVariables extends Bootstrapper
     {
         try {
             $env = Dotenv::createImmutable(base_path());
+
             $env->load();
         } catch (InvalidPathException $e) {
-
         }
     }
 }

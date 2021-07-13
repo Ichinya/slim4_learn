@@ -6,15 +6,21 @@ use Boot\Foundation\HttpKernel as Kernel;
 
 class HttpKernel extends Kernel
 {
-    /** @var array $middleware Global Middleware */
+    /**
+     * Global Middleware
+     *
+     * @var array
+     */
     public array $middleware = [
-//        Middleware\ExampleBeforeMiddleware::class,
-//        Middleware\ExampleAfterMiddleware::class
+//        Middleware\ExampleAfterMiddleware::class,
+//        Middleware\ExampleBeforeMiddleware::class
     ];
 
-    /** @var array $middlewareGroups Route Middleware Group */
+    /**
+     * Route Group Middleware
+     */
     public array $middlewareGroups = [
         'api' => [],
-        'web' => [],
+        'web' => []
     ];
 }

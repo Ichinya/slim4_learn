@@ -2,10 +2,9 @@
 
 class Factory
 {
-    /** @var callable[] $definitions */
-    public static array $definitions;
+    public static $definitions;
 
-    public function __invoke(string $model, $count = 1): FactoryMakeOrCreate
+    public function __invoke(string $model, $count = 1)
     {
         $this->loadFactoryFor($model);
 
@@ -20,7 +19,7 @@ class Factory
         require_once database_path("factories/{$factory}.php");
     }
 
-    public static function define(string $model, callable $fake): Factory
+    public static function define(string $model, callable $fake)
     {
         self::$definitions[$model] = $fake;
 

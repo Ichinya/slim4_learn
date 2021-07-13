@@ -6,10 +6,10 @@ use DB;
 
 class DatabaseServiceProvider extends ServiceProvider
 {
-
     public function register()
     {
         $options = data_get(config('database.connections'), config('database.default'));
+
         $capsule = new DB;
         $capsule->addConnection($options);
         $capsule->setAsGlobal();

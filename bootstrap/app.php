@@ -1,7 +1,16 @@
 <?php
 
-use App\Http\HttpKernel;
 use DI\Container;
-use DI\Bridge\Slim\Bridge as App;
+use App\Http\HttpKernel;
+use App\Console\ConsoleKernel;
+use Boot\Foundation\AppFactoryBridge as App;
 
-return HttpKernel::bootstrap(App::create(new Container))->getApplication();
+$app = App::create(new Container);
+
+$http_kernel = new HttpKernel($app);
+$console_kernel = new ConsoleKernel($app);
+
+$app->bind(HttpKernel::class, $http_kernel);
+$app->bind(ConsoleKernel::class, $console_kernel);
+
+return $app;

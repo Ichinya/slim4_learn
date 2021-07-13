@@ -1,27 +1,32 @@
 <?php
 
+
 namespace Boot\Foundation;
 
-use Boot\Foundation\Bootstrappers\Bootstrapper;
 
 class HttpKernel extends Kernel
 {
-
-    /** @var array $middleware Global Middleware */
+    /**
+     * Global Middleware
+     *
+     * @var array
+     */
     public array $middleware = [];
 
-    /** @var array $middlewareGroups Route Middleware Group */
+    /**
+     * Route Group Middleware
+     */
     public array $middlewareGroups = [
         'api' => [],
-        'web' => [],
+        'web' => []
     ];
 
-    public array $bootstrap = [
+    public array $bootstrappers = [
+        Bootstrappers\LoadEnvironmentDetector::class,
         Bootstrappers\LoadEnvironmentVariables::class,
         Bootstrappers\LoadDebuggingPage::class,
         Bootstrappers\LoadAliases::class,
         Bootstrappers\LoadHttpMiddleware::class,
-        Bootstrappers\LoadServiceProviders::class
+        Bootstrappers\LoadServiceProviders::class,
     ];
-
 }
