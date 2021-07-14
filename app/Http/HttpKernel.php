@@ -12,8 +12,6 @@ class HttpKernel extends Kernel
      * @var array
      */
     public array $middleware = [
-//        Middleware\ExampleAfterMiddleware::class,
-//        Middleware\ExampleBeforeMiddleware::class
     ];
 
     /**
@@ -21,6 +19,8 @@ class HttpKernel extends Kernel
      */
     public array $middlewareGroups = [
         'api' => [],
-        'web' => []
+        'web' => [
+            Middleware\RouteContextMiddleware::class
+        ]
     ];
 }

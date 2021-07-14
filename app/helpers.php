@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 /*
+ * redirect
  * collect
  * factory
  * env
@@ -24,6 +25,15 @@ use Illuminate\Support\Collection;
  * data_get
  * data_set
  */
+
+if (!function_exists('redirect')) {
+    function redirect(string $to)
+    {
+        $redirect = app()->resolve(\App\Support\Redirect::class);
+
+        return $redirect($to);
+    }
+}
 if (!function_exists('collect')) {
     function collect($items)
     {
