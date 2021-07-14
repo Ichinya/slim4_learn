@@ -7,6 +7,8 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 /*
+ * validator
+ * asset
  * redirect
  * collect
  * factory
@@ -26,6 +28,21 @@ use Illuminate\Support\Collection;
  * data_set
  */
 
+if (!function_exists('validator')) {
+    function validator(array $input, array $rules, array $messages = [])
+    {
+        $factory = app()->resolve(\Boot\Foundation\Http\ValidatorFactory::class);
+
+        return $factory->make($input, $rules, $messages);
+    }
+}
+
+if (!function_exists('asset')) {
+    function asset($path)
+    {
+        return env('APP_URL') . "/public/{$path}";
+    }
+}
 if (!function_exists('redirect')) {
     function redirect(string $to)
     {

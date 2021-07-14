@@ -7,22 +7,17 @@ use Illuminate\Filesystem\Filesystem;
 class ViewClearCommand extends Command
 {
     protected $name = 'view:clear';
-
-    protected $description = 'Clear all compiled view files';
+    protected $description = 'Remove Cache For View Templates';
 
     public function handler()
     {
-        $files = new Filesystem();
+        $files = app()->resolve(Filesystem::class);
         $path = config('blade.cache');
 
-        if (!$path) {
-            throw new \RuntimeException('View path not found');
-        }
+        throw_when(!$path, "Views cache path not found", \RuntimeException::class);
 
-        foreach ($files->glob("{$path}/*") as $view) {
-            $files->delete($view);
-        }
+        collect($files->glob("{$path}/*"))->each(fn($cached_view) => $files->delete($cached_view));
 
-        $this->info('Compiled views cleared!');
+        $this->info("Cached Views Cleared Successfully!");
     }
 }

@@ -10,17 +10,15 @@ class LoadHttpMiddleware extends Bootstrapper
     {
         $kernel = $this->app->resolve(Kernel::class);
 
-        $bind_key_or_instance = fn($middleware) => class_exists($middleware)
-            ? $this->app->bind($middleware, new $middleware)
-            : null;
-
-        $all_middleware = [
+        $middleware = [
             ...$kernel->middleware,
             ...$kernel->middlewareGroups['api'],
             ...$kernel->middlewareGroups['web']
         ];
 
-        array_walk($all_middleware, $bind_key_or_instance);
+        collect($middleware)
+            ->filter(fn($guard) => class_exists($guard))
+            ->each(fn($guard) => $this->app->bind($guard, new $guard));
 
         $this->app->bind('middleware', fn() => [
             'global' => $kernel->middleware,

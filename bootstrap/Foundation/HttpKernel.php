@@ -4,8 +4,6 @@
 namespace Boot\Foundation;
 
 
-use Slim\Csrf\Guard;
-
 class HttpKernel extends Kernel
 {
     /**
@@ -28,7 +26,7 @@ class HttpKernel extends Kernel
         Bootstrappers\LoadEnvironmentVariables::class,
         Bootstrappers\LoadDebuggingPage::class,
         Bootstrappers\LoadAliases::class,
-        Bootstrappers\LoadCsrfVerification::class,
+        Bootstrappers\LoadCsrf::class,
         Bootstrappers\LoadHttpMiddleware::class,
         Bootstrappers\LoadBladeTemplates::class,
         Bootstrappers\LoadServiceProviders::class,

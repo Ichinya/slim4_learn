@@ -15,5 +15,6 @@ yarn-error.log
 /.vscode
 /cache
 /storage/cache
+/storage/error_logs
 /public/js
 /public/css

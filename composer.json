@@ -1,4 +1,10 @@
 {
+  "keywords": [
+    "Php",
+    "Slim 4",
+    "Php Authentication",
+    "Slim 4 Authentication"
+  ],
   "name": "ichinya/slim_learn",
   "require": {
     "PHP": "^7.4",
@@ -15,7 +21,8 @@
     "vlucas/phpdotenv": "*",
     "robmorgan/phinx": "^0.12",
     "fzaninotto/faker": "*",
-    "slim/csrf": "^1.2.1"
+    "slim/csrf": "^1.2.1",
+    "illuminate/validation": "^8.50.0"
   },
   "autoload": {
     "files": [
