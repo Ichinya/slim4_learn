@@ -22,13 +22,16 @@ class Command extends Console
 
     protected function optional($description = '', $default = false)
     {
-        return $default ? [Arg::OPTIONAL, $description, $default] : [Arg::OPTIONAL, $description];
+        return $default
+            ? [Arg::OPTIONAL, $description, $default]
+            : [Arg::OPTIONAL, $description];
     }
 
     protected function arguments()
     {
         return [
-            // Add command signature arguments
+            'name' => ['array', 'of', 'options']
+            // Add Command Arguments
         ];
     }
 

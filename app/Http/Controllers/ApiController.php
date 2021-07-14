@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Psr\Http\Message\ResponseInterface as Response;
 
 class ApiController
 {
-    public function index(Response $response): Response
+    public function index($response, User $user)
     {
-        $user = User::find(1);
-        $response->getBody()->write(json_encode($user, JSON_PRETTY_PRINT));
+        // $user = Db::table('users')->find(1);
+        $response->getBody()->write(json_encode($user::get(), JSON_PRETTY_PRINT));
 
         return $response;
     }

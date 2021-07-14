@@ -3,8 +3,6 @@
 namespace App\Support;
 
 use Illuminate\Support\Str;
-use Slim\App;
-use Slim\Routing\RouteCollectorProxy;
 
 class Route
 {

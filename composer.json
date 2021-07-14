@@ -14,7 +14,8 @@
     "zeuxisoo/slim-whoops": "^0.7.3",
     "vlucas/phpdotenv": "*",
     "robmorgan/phinx": "^0.12",
-    "fzaninotto/faker": "*"
+    "fzaninotto/faker": "*",
+    "slim/csrf": "^1.2.1"
   },
   "autoload": {
     "files": [

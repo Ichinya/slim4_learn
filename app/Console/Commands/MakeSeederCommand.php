@@ -1,26 +1,28 @@
 <?php
 
+
 namespace App\Console\Commands;
+
 
 class MakeSeederCommand extends Command
 {
     protected $name = 'make:seeder';
-    protected $help = 'Make a Seeder scaffold';
+    protected $help = 'Make a Seeder Scaffold';
     protected $description = 'Generate a database seeder scaffold';
 
     protected function arguments()
     {
         return [
-            'name' => $this->require('Generated Seeder File Name')
+            'name' => $this->require('Name of Scaffolded Seeder Class')
         ];
     }
 
     public function handler()
     {
         $name = $this->input->getArgument('name');
+        $command = "./vendor/bin/phinx seed:create {$name}";
 
-        shell_exec($this->bin . " seed:create {$name}");
-
-        $this->info("Successful (If this message is the only message, Error Would Show Above)");
+        shell_exec($command);
+        $this->info("Successful (If no message is displayed above)");
     }
 }

@@ -4,8 +4,8 @@ namespace Boot\Foundation\Bootstrappers;
 
 class Bootstrapper
 {
-    protected $app;
-    protected $kernel;
+    public $app;
+    public $kernel;
 
     final public function __construct(&$app, &$kernel)
     {

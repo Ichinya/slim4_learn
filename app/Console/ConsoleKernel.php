@@ -2,19 +2,18 @@
 
 namespace App\Console;
 
-class ConsoleKernel extends \Boot\Foundation\ConsoleKernel
+use Boot\Foundation\ConsoleKernel as Kernel;
+
+class ConsoleKernel extends Kernel
 {
-    /**
-     * The Console Commands We Want To Boot up for our Console App
-     * @var array
-     */
-    public $commands = [
-        Commands\MigrateCommand::class,
+    public array $commands = [
+        Commands\ViewClearCommand::class,
         Commands\MakeSeederCommand::class,
-        Commands\SeedDatabaseCommand::class,
-        Commands\FreshDatabaseCommand::class,
+        Commands\DatabaseRunSeeders::class,
+        Commands\DatabaseFreshCommand::class,
         Commands\MakeMigrationCommand::class,
-        Commands\DatabaseTableDisplay::class,
-        Commands\RollbackMigrationCommand::class,
+        Commands\DatabaseMigrateCommand::class,
+        Commands\DatabaseTableDisplayCommand::class,
+        Commands\DatabaseRollbackMigrationCommand::class
     ];
 }

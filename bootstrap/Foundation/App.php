@@ -4,14 +4,18 @@ namespace Boot\Foundation;
 
 class App extends \Slim\App
 {
-    public function runningViaConsole()
+    public function bootedViaConsole()
     {
-        return $this->has('bootedViaConsole') ? $this->resolve('bootedViaConsole') : false;
+        return $this->has('bootedViaConsole')
+            ? $this->resolve('bootedViaConsole')
+            : false;
     }
 
-    public function runningViaHttpRequest()
+    public function bootedViaHttpRequest()
     {
-        return $this->has('bootedViaHttp') ? $this->resolve('bootedViaHttp') : false;
+        return $this->has('bootedViaHttp')
+            ? $this->resolve('bootedViaHttp')
+            : false;
     }
 
     public function call(...$parameters)

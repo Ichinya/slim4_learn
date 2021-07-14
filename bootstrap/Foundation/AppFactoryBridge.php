@@ -2,18 +2,18 @@
 
 namespace Boot\Foundation;
 
+use DI\Container;
+use Invoker\Invoker;
 use DI\Bridge\Slim\Bridge;
 use DI\Bridge\Slim\CallableResolver;
 use DI\Bridge\Slim\ControllerInvoker;
-use DI\Container;
-use Invoker\CallableResolver as InvokerCallableResolver;
-use Invoker\Invoker;
-use Invoker\ParameterResolver\AssociativeArrayResolver;
-use Invoker\ParameterResolver\Container\TypeHintContainerResolver;
-use Invoker\ParameterResolver\DefaultValueResolver;
-use Invoker\ParameterResolver\ResolverChain;
 use Psr\Container\ContainerInterface;
+use Invoker\ParameterResolver\ResolverChain;
 use Slim\Interfaces\CallableResolverInterface;
+use Invoker\ParameterResolver\DefaultValueResolver;
+use Invoker\ParameterResolver\AssociativeArrayResolver;
+use Invoker\CallableResolver as InvokerCallableResolver;
+use Invoker\ParameterResolver\Container\TypeHintContainerResolver;
 
 class AppFactoryBridge extends Bridge
 {

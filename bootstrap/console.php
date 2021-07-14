@@ -1,17 +1,11 @@
 <?php
 
-/**
- * Autoload global dependencies and allow for auto-loading local dependencies via use
- */
 require_once __DIR__ . '/../vendor/autoload.php';
 
-/**
- * Boot up application, AKA Turn the lights on.
- */
-$app = require base_path('bootstrap/app.php');
+$app = require __DIR__ . '/app.php';
 
 /**
- * Make Console Kernel
+ * Resolve Console Kernel
  */
 $kernel = $app->resolve(\App\Console\ConsoleKernel::class);
 
@@ -21,6 +15,6 @@ $kernel = $app->resolve(\App\Console\ConsoleKernel::class);
 $kernel->bootstrapApplication();
 
 /**
- * Return Console App
+ * Return Console Booted App
  */
 return $app;

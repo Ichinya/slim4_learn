@@ -3,22 +3,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\View;
 use App\User;
-use Psr\Http\Message\ResponseInterface as Response;
-
+use App\Support\View;
 
 class WelcomeController
 {
-    public function index(View $view, User $user): Response
+    public function index(View $view, User $user)
     {
-        $user = $user->find(1);
-        $name = 'TITLE';
-        return $view('auth.home', compact('name', 'user'));
+        $users = $user->get();
+        $name = 'Clean Code Studio';
+
+        return $view('auth.home', compact('name', 'users'));
     }
 
-    public function show(View $view, $name): Response
+    public function show(View $view, $name, $id)
     {
-        return $view('user.show', compact('name'));
+        return $view('user.show', compact('name', 'id'));
     }
 }

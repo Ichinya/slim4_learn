@@ -6,11 +6,10 @@ use Psr\Container\ContainerInterface;
 use Slim\Interfaces\RouteResolverInterface;
 use Slim\Interfaces\RouteCollectorInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
-use Slim\Factory\AppFactory as SlimAppFactory;
 use Slim\Interfaces\CallableResolverInterface;
 use Slim\Interfaces\MiddlewareDispatcherInterface;
 
-class AppFactory extends SlimAppFactory
+class AppFactory extends \Slim\Factory\AppFactory
 {
     public static function createFromContainer(ContainerInterface $container): App
     {

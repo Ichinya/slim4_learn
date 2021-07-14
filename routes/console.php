@@ -1,12 +1,9 @@
 <?php
 
-use App\Support\Console\Console;
+use App\Support\Console;
 
-Console::command('show:example {name}', function () {
-    $this->info('Success!')
-        ->error('WHatoh')
-        ->comment('Intriguing')
-        ->question('How do you mean?');
+Console::command('tinker', function () {
+    $team = \App\Team::first();
 
-    $this->output->write($this->input->getArgument('name'));
-})->setDescription('Showing Example of Slim Console Commands');
+    $this->info("$team->name belongs to {$team->user->first_name}");
+});
