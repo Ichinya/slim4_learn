@@ -7,7 +7,7 @@ use Illuminate\Translation\Translator;
 
 class ValidatorFactory
 {
-    protected $factor;
+    protected Factory $factory;
 
     public function __construct(Translator $translator)
     {

@@ -16,7 +16,8 @@ class RegisterController
 
     public function store(RequestInput $input)
     {
-        if ($input->password != $input->confirm_password) {
+        if ($input->password != $input->confirm_password)
+        {
             dd("Password and Confirm Password Do Not Match");
         }
 
