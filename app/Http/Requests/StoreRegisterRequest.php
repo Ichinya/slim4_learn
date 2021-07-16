@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Listeners\FlashSuccessMessage;
-
 class StoreRegisterRequest extends FormRequest
 {
     protected function afterValidationPasses()

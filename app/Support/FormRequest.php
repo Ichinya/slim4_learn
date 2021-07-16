@@ -36,12 +36,12 @@ class FormRequest extends RequestInput
 
     protected function afterValidationPasses()
     {
-        event()->fire('flash.success', ['Successful!']);
+        //
     }
 
     protected function afterValidationFails()
     {
-        event()->fire('flash.error', ['Whoops, something went wrong!']);
+        //
     }
 
     protected function afterValidation()
@@ -54,7 +54,7 @@ class FormRequest extends RequestInput
         return $this->validator;
     }
 
-    public function failed() : bool
+    public function failed(): bool
     {
         return $this->validator()->fails();
     }
