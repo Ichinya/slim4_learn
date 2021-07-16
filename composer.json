@@ -22,7 +22,10 @@
     "robmorgan/phinx": "^0.12",
     "fzaninotto/faker": "*",
     "slim/csrf": "^1.2.1",
-    "illuminate/validation": "^8.50.0"
+    "illuminate/validation": "^8.50.0",
+    "swiftmailer/swiftmailer": "^6.2",
+    "guzzlehttp/guzzle": "^7.3.0",
+    "illuminate/mail": "^8.50.0"
   },
   "autoload": {
     "files": [

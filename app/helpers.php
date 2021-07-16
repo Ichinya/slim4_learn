@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
 
 /*
+ * old
  * back
  * session
  * validator
@@ -29,6 +30,19 @@ use Illuminate\Support\Collection;
  * data_get
  * data_set
  */
+
+if (!function_exists('old')) {
+    function old($key)
+    {
+        $input = app()->resolve('old_input');
+
+        $field = collect($input)->filter(fn($value, $field) => $key == $field);
+
+        if (isset($field[$key])) {
+            return $field[$key];
+        }
+    }
+}
 
 if (!function_exists('back')) {
     function back()
